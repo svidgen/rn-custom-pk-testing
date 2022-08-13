@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "cpkschema7expo",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}
