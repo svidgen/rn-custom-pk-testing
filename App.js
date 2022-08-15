@@ -26,9 +26,9 @@ function App() {
    * @param {string} name 
    * @param {function} exec 
    */
-  const describe = async (name, exec) => {
+  const describe = (name, exec) => {
     suiteName.push(name);
-    await exec()
+    exec()
     suiteName.pop();
   };
 

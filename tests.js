@@ -69,6 +69,9 @@ const expect = (value) => {
         toBeDefined: () => {
             return value !== undefined;
         },
+        toBe: (expected) => {
+          return value === expected;
+        },
         toEqual: (expected) => {
             if (Array.isArray(expected)) {
                 expect(value.length).toEqual(expected.length);
@@ -83,6 +86,9 @@ const expect = (value) => {
             } else {
                 return value === expected;
             }
+        },
+        toBeGreaterThanOrEqual: (expected) => {
+          return value >= expected;
         },
         toBeFalsy: () => {
             return !value;

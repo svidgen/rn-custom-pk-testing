@@ -54,13 +54,6 @@ export const schema = {
         "Post": {
             "name": "Post",
             "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "postId": {
                     "name": "postId",
                     "isArray": false,
@@ -86,7 +79,9 @@ export const schema = {
                     "isArrayNullable": true,
                     "association": {
                         "connectionType": "HAS_MANY",
-                        "associatedWith": "post"
+                        "associatedWith": [
+                            "post"
+                        ]
                     }
                 },
                 "createdAt": {
@@ -127,13 +122,6 @@ export const schema = {
         "Comment": {
             "name": "Comment",
             "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "commentId": {
                     "name": "commentId",
                     "isArray": false,
@@ -158,8 +146,18 @@ export const schema = {
                     "attributes": [],
                     "association": {
                         "connectionType": "BELONGS_TO",
-                        "targetName": "postId"
+                        "targetNames": [
+                            "postId",
+                            "postTitle"
+                        ]
                     }
+                },
+                "postId": {
+                    "name": "postId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": false,
+                    "attributes": []
                 },
                 "postTitle": {
                     "name": "postTitle",
@@ -216,5 +214,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "b11a35729af052d6d3dc96edb5d7270d"
+    "version": "271054a9a878c650c152aa3b932ade80"
 };
